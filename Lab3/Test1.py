@@ -28,3 +28,9 @@ try:
 except:
     print('Invaild')
     pass
+
+numbers = [1,2,3]
+for i,n in enumerate(numbers):
+    if n>1:
+        numbers[i] = 0
+print(numbers)
