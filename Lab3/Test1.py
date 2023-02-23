@@ -1,4 +1,4 @@
-a_list = [1,2,3]
+a_list = [2,3,4]
 a_new_list=[x+1 for x in a_list if x>1]
 print(a_new_list)
 quick_list=[x*x for x in range(7)]
