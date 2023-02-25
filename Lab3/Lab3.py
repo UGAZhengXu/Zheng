@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 # Part 1: Task 1
 # Response: Finshed by created messy.ssv
 
@@ -145,10 +146,12 @@ if lenAgetem%2==0:
 else:
    Age_mid=Agesorted[int((lenAgetem-1)/2)]
 NewAge=Age1[:]
+TemAge=[]
 for i,n in enumerate(NewAge):
     if n<0:
         NewAge[i] = Age_mid
-print('The Orginal Age is:',Age1)
+        TemAge.append(i)
+print('The Orginal Age is:',Age1,TemAge)
 print('The Orginal Modified Age is:',NewAge)
 print(f'The age range is [{Agesorted[0]},{Agesorted[-1]}]')
 
@@ -166,5 +169,6 @@ for i,n in enumerate(Age1):
    Newfile.writelines([';'.join(temstri),'\n'])
 
 # Part 3: Task 1
-
-
+plt.scatter(NewAge,BMI)
+# plt.scatter(NewAge[TemAge],BMI[TemAge])
+plt.show()
