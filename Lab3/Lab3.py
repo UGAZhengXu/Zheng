@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import sys
 from prettytable import PrettyTable
 import numpy as np
 
@@ -236,7 +235,7 @@ ax[1].bar([2,3,4],Health3,bottom=np.array(Health1)+np.array(Health2))
 ax[1].legend(["UnderWeight","NormalWeight","OverWeight"])
 ax[1].set(xticks=[2,3,4],xticklabels=["M","F","N"])
 plt.tight_layout()
-# plt.show()
+plt.show()
 f.savefig('Figure of Lab3',bbox_inches="tight")
 
 table=PrettyTable(['Name','Email Address'])
