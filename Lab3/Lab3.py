@@ -1,4 +1,8 @@
 import matplotlib.pyplot as plt
+import sys
+from prettytable import PrettyTable
+import numpy as np
+
 # Part 1: Task 1
 # Response: Finshed by created messy.ssv
 
@@ -147,11 +151,15 @@ else:
    Age_mid=Agesorted[int((lenAgetem-1)/2)]
 NewAge=Age1[:]
 TemAge=[]
+TemAge2=[]
 for i,n in enumerate(NewAge):
     if n<0:
         NewAge[i] = Age_mid
-        TemAge.append(i)
-print('The Orginal Age is:',Age1,TemAge)
+        TemAge.append(NewAge[i])
+    else:
+        TemAge2.append(NewAge[i])
+
+print('The Orginal Age is:',Age1)
 print('The Orginal Modified Age is:',NewAge)
 print(f'The age range is [{Agesorted[0]},{Agesorted[-1]}]')
 
@@ -162,13 +170,77 @@ for i,w in enumerate(Weight1):
    BMI.append(w/(Hight_Unit[i]**2))
 print('BMI(kg/m^2):',BMI)
 
+TemBMI1=[]
+TemBMI2=[]
+for i,n in enumerate(Age1):
+    if n<0:
+        TemBMI1.append(BMI[i])
+    else:
+        TemBMI2.append(BMI[i])
+
 # Part 2: Task 3
 Newfile=open('clean.ssv','w')
 for i,n in enumerate(Age1):
    temstri=[FirstName1[i],LastName1[i],Gender1[i],Email1[i],str(NewAge[i]),str(Hight1[i]),str(Weight1[i]),str(Issue1[i])]
    Newfile.writelines([';'.join(temstri),'\n'])
 
+Health_M=[0,0,0]
+Health_F=[0,0,0]
+Health_N=[0,0,0]
+
+for i,n in enumerate(BMI):
+   if Gender1[i]=='M':
+      if BMI[i]<18.5:
+         Health_M[0]=Health_M[0]+1
+      else:
+         if BMI[i]<25:
+            Health_M[1]=Health_M[1]+1
+         else:
+            Health_M[2]=Health_M[2]+1
+   else:
+      if Gender1[i]=='F':
+       if BMI[i]<18.5:
+         Health_F[0]=Health_F[0]+1
+       else:
+         if BMI[i]<25:
+            Health_F[1]=Health_F[1]+1
+         else:
+            Health_F[2]=Health_F[2]+1
+      else:
+       if BMI[i]<18.5:
+         Health_N[0]=Health_N[0]+1
+       else:
+         if BMI[i]<25:
+            Health_N[1]=Health_N[1]+1
+         else:
+            Health_N[2]=Health_N[2]+1
+print(Health_M,Health_F,Health_N)
+Health1=[Health_M[0],Health_F[0],Health_N[0]]
+Health2=[Health_M[1],Health_F[1],Health_N[1]]
+Health3=[Health_M[2],Health_F[2],Health_N[2]]
 # Part 3: Task 1
-plt.scatter(NewAge,BMI)
-# plt.scatter(NewAge[TemAge],BMI[TemAge])
-plt.show()
+f, ax = plt.subplots(1, 2)
+# for tem in TemAge2:
+#    ax[0,0].plot(NewAge[tem],BMI[tem],marker='*',color='blue')
+# for tem in TemAge:
+#   ax[0,0].plot(NewAge[tem],BMI[tem],marker='+',color='red')
+# plt.show()
+f.suptitle("Caculation Results for Lab3")
+ax[0].scatter(TemAge2,TemBMI2,marker='+',color='red')
+ax[0].scatter(TemAge,TemBMI1,marker='*',color='blue')
+ax[0].legend(["With Age","Without Age"])
+ax[0].set(title="Distribution figure of BMI and Age")
+ax[1].bar([2,3,4],Health1)
+ax[1].bar([2,3,4],Health2,bottom=Health1)
+ax[1].bar([2,3,4],Health3,bottom=np.array(Health1)+np.array(Health2))
+ax[1].legend(["UnderWeight","NormalWeight","OverWeight"])
+ax[1].set(xticks=[2,3,4],xticklabels=["M","F","N"])
+plt.tight_layout()
+# plt.show()
+f.savefig('Figure of Lab3',bbox_inches="tight")
+
+table=PrettyTable(['Name','Email Address'])
+for i,n in enumerate(Issue1):
+   if n==1:
+      table.add_row([FirstName1[i],Email1[i]])
+print(table)
