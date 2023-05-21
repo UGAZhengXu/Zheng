@@ -1,13 +1,13 @@
-zx84656@uga.edu;Zheng;Xu;m;26;170;65;22.5;0
-sf65265@uga.edu;Fang;Shen;f;24;165.1;54;19.8;1
-st97257@uga.edu;Stephen;Li;m;24;185;70;20.5;1
-sc96502@uga.edu;Su Shan;Sang;n;24;152.4;57;24.5;1
-jy32579@gmail.com;Join;Yang;m;23;183;67;20.0;0
-cb86509@uga.edu;Biehong;Chao;f;52;160;55;21.5;0
-rl65435@uga.edu;Richard;unknown;m;24;182.88;66;19.7;1
-rj42357@uga.edu;Faker;John;m;28;166;67;24.3;0
-lw65435@uga.edu;Wei;Liu;f;21;124.46000000000001;70;45.2;1
-ll56736@uga.edu;Lin;Li;f;23;160;50;19.5;0
-yx12479@uga.edu;Yiyi;Xu;f;9;114.3;43;32.9;1
-rw56236@uga.edu;Feipeng;Xu;m;25;177.8;66;20.9;1
-my75623@uga.edu;Mei;Yang;f;24;152.4;59;25.4;1
+Zheng;Xu;M;zx84656@uga.edu;26;170;65;0
+Fang;Shen;F;sf65265@uga.edu;24;165;54;1
+Feipeng;Xu;M;rw56236@uga.edu;25;177;65;1
+Stephen;Li;M;st97257@uga.edu;24;185;70;1
+Su;Shan;N;sc96502@uga.edu;24;152;56;1
+Join;Yang;M;jy32579@gmail.com;23;183;67;0
+Biehong;Chao;F;cb86509@uga.edu;52;160;55;0
+Wei;Liu;F;lw65435@uga.edu;21;124;70;1
+Richard;Unknown;m;rl65435@uga.edu;24;182;65;1
+Faker;John;m;rj42357@uga.edu;28;166;67;0
+Lin;Li;f;ll56736@uga.edu;23;160;50;0
+Yiyi;Xu;f;yx12479@uga.edu;9;114;43;1
+Mei;Yang;F;my75623@uga.edu;24;152;58;1
