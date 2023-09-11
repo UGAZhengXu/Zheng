@@ -6,7 +6,6 @@ data=df.values
 DTList=data.tolist()
 wb = openpyxl.Workbook()
 ws = wb.active
-Newfile=open('CHY.csv','w')
 for lines in DTList:
    strlines=str(lines)
    tem_line=strlines.split(',')
